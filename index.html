@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="fundo1">
+
+        <div class="logo">
+        </div>
+        <img src="seta2.png" alt="" class="seta" id="seta" onclick="scrollToNextSection()">
+    </div>
+
+
+
+    <div class="fundo2">
+        <div class="vidro"></div>
+        <div class="hist">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum non saepe ad illo, veritatis iste
+                reprehenderit maiores rem officiis, ea voluptatem dignissimos eligendi nisi, inventore incidunt? Et
+                nostrum vero corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi deleniti ipsa
+                corporis illo laborum magnam, doloribus nihil ullam repudiandae itaque optio quibusdam natus dolorem
+                iste. Saepe aliquam eos deleniti alias!</p>
+        </div>
+        <img src="vela.png" alt="" class="histfoto">
+        <div class="vidro"></div>
+    </div>
+    <div class="fundo3">
+        <div class="vitrine">
+            <div class="card">
+                <img src="vela1.JPG" alt="">
+                <h2>vela de bambu</h2>
+                <p>R$25</p>
+            </div>
+            <div class="card">
+                <img src="vela2.JPG" alt="">
+                <h2>vela de bambu</h2>
+                <p>R$25</p>
+            </div>
+            <div class="card">
+                <img src="vela3.JPG" alt="">
+                <h2>vela de bambu</h2>
+                <p>R$25</p>
+            </div>
+            <div class="card">
+                <img src="vela4.JPG" alt="">
+                <h2>vela de bambu</h2>
+                <p>R$25</p>
+            </div>
+            <div class="card">
+                <img src="Logo.png" alt="">
+                <h2>vela de bambu</h2>
+                <p>R$25</p>
+            </div>
+            <div class="card">
+                <img src="Logo.png" alt="">
+                <h2>vela de bambu</h2>
+                <p>R$25</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const animatedElement = document.getElementById("seta");
+
+            window.addEventListener("scroll", function () {
+                const scrolled = window.scrollY;
+
+                // Ajuste o valor 200 conforme necessário para controlar quando a animação deve começar
+                if (scrolled > 400) {
+                    animatedElement.style.top = "-100px";
+                } else if (scrolled <= 30) {
+                    animatedElement.style.top = "90%";
+                }
+            });
+        });
+
+        function scrollToNextSection() {
+            const currentSection = document.querySelector(':target') || document.querySelector('.fundo1');
+            const nextSection = currentSection.nextElementSibling;
+
+            if (nextSection) {
+                nextSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
