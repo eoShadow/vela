@@ -50,10 +50,11 @@ body {
 .seta {
     width: 5%;
     height: auto;
-    filter: invert(80%);
+    filter: invert(80%) opacity(0.3);
     transition: 0.2s ease-out;
     position: absolute;
     top: 90%;
+    animation: flutu infinite 4s;
 
 }
 
@@ -90,7 +91,7 @@ body {
 
 .histfoto {
     height: 60%;
-    width: auto;
+    width: 40%;
     margin: 5%;
     z-index: 5;
 
@@ -142,8 +143,7 @@ body {
     background: #ffffff;
     margin: 10px;
     border: none;
-
-
+border-radius: 5px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -151,7 +151,7 @@ body {
     flex-direction: column;
     color: rgb(0, 0, 0);
 
-    font-size: 17px;
+    font-size: 20px;
     transition: 300ms;
 
 }
@@ -166,6 +166,9 @@ body {
 
 .card p {
     margin: 5%;
+    padding: 2% 8% ;
+    background: wheat;
+    border-radius: 10px;
 }
 
 .card:hover::before {
@@ -228,9 +231,9 @@ body {
     justify-content: center;
     text-decoration: none;
     font-size: 26px;
-    color: #c7ba00;
+    color: rgb(247, 209, 140);
     border-radius: 50%;
-    outline: 2px solid #c7ba00;
+    outline: 2px solid wheat;
     transition-property:
         outline-offset, outline-color,
         background-color;
@@ -299,3 +302,12 @@ body {
         transform: rotate(-15deg);
     }
 }
+
+@keyframes flutu {
+    0%, 100% {
+      transform: translateY(0); /* Posição inicial e final (sem deslocamento vertical) */
+    }
+    50% {
+      transform: translateY(-20px); /* Meio da animação, deslocamento para cima */
+    }
+  }
